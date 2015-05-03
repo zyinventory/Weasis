@@ -22,6 +22,9 @@
 				<include>bundle/*-solaris-*.jar</include>
 				<include>bundle/*.jar${pack200.ext}</include>
 			</includes>
+			<excludes>
+				<exclude>**/*.original.jar</exclude>
+			</excludes>
 		</fileSet>
 		<fileSet>
 			<!-- Direct resources copy -->

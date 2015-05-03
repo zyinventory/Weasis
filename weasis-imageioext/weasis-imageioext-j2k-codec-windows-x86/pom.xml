@@ -25,6 +25,7 @@
 						<Fragment-Host>weasis-imageioext-j2k-codec;bundle-version="0.5.2"</Fragment-Host>
 						<Embed-Directory>.</Embed-Directory>
 						<Embed-StripVersion>true</Embed-StripVersion>
+						<Embed-Dependency>*;scope=compile;inline=false</Embed-Dependency>
 					</instructions>
 				</configuration>
 			</plugin>

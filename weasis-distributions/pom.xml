@@ -53,7 +53,7 @@
 		<jai.version>1.1.4-b05</jai.version>
 		<jai.native.version>1.1.4-b03</jai.native.version>
 		<weasis.imageio.native.version>1.2-b04</weasis.imageio.native.version>
-		<!-- <weasis.imageioext.kakadu.native.version>6.4.0</weasis.imageioext.kakadu.native.version> -->
+		<weasis.imageioext.kakadu.native.version>6.4.0</weasis.imageioext.kakadu.native.version>
 		<com.sun.media.j3d.version>1.5.2</com.sun.media.j3d.version>
 		<tilecachetool.version>1.0.2</tilecachetool.version>
 
@@ -313,6 +313,46 @@
 								</artifactItem>
 
 								<!-- ===================================== -->
+								<!-- Weasis ImageioExit bundles -->
+								<!-- ===================================== -->
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-linux-x86</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-linux-x86-64</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-macosx-x86</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-macosx-x86-64</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-windows-x86</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.weasis.imageioext</groupId>
+									<artifactId>weasis-imageioext-j2k-codec-windows-x86-64</artifactId>
+									<version>${weasis.imageioext.kakadu.native.version}</version>
+									<outputDirectory>${tmp.bundle.dir}</outputDirectory>
+								</artifactItem>
+								
+								<!-- ===================================== -->
 								<!-- Weasis Base bundles -->
 								<!-- ===================================== -->
 								<artifactItem>
@@ -458,6 +498,22 @@
 							</descriptors>
 						</configuration>
 					</execution>
+					<execution>
+						<id>i18n</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+						<configuration>
+							<inherited>false</inherited>
+							<finalName>weasis-i18n</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<outputDirectory>${project.build.directory}/web-dist</outputDirectory>
+							<descriptors>
+								<descriptor>src/assembly/i18n-dist.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
@@ -551,6 +607,9 @@
 									<includes>
 										<include>**/*.jar</include>
 									</includes>
+									<excludes>
+										<exclude>**/*.original.jar</exclude>
+									</excludes>
 								</configuration>
 							</execution>
 						</executions>

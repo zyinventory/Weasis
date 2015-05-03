@@ -24,6 +24,7 @@
 						<Bundle-NativeCode>lib/libkdu_jni.so; processor=x86; osname=Linux</Bundle-NativeCode>
 						<Fragment-Host>weasis-imageioext-j2k-codec;bundle-version="0.5.2"</Fragment-Host>
 						<Embed-StripVersion>true</Embed-StripVersion>
+						<Embed-Dependency>*;scope=compile;inline=false</Embed-Dependency>
 					</instructions>
 				</configuration>
 			</plugin>

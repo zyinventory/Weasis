@@ -10,7 +10,7 @@
 	<parent>
 		<artifactId>weasis-parent</artifactId>
 		<groupId>org.weasis</groupId>
-		<version>1.5-SNAPSHOT</version>
+		<version>1.21-SNAPSHOT</version>
 		<relativePath>../../weasis-parent/pom.xml</relativePath>
 	</parent>
 </project>
